@@ -16,7 +16,7 @@ int g(int a){
 
 function<int(int)> compose(function<int(int)> af, function<int(int)> ag){
     auto fg = [af,ag](auto a){
-        return f(g(a));
+        return af(ag(a));
     };
     return fg;
 }
